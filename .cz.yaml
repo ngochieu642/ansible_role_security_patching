@@ -1,0 +1,9 @@
+commitizen:
+  name: cz_conventional_commits
+  version: 0.0.1
+  "version_files":
+      - ".cz.yaml"
+  bump_message: "bump: version $current_version → $new_version"
+  tag_format: "$version"
+  version_scheme: "semver"
+  update_changelog_on_bump: true
