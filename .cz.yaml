@@ -1,35 +1,36 @@
+---
 commitizen:
-  name: cz_conventional_commits
-  version: 0.0.1
-  "version_files":
-      - ".cz.yaml"
-      - "./meta/main.yml"
   bump_map:
-    break: MAJOR
     BREAKING CHANGE: MAJOR
-    feat: MINOR
-    fix: PATCH
-    perf: PATCH
-    refactor: PATCH
+    break: MAJOR
     build: null
     chore: null
     ci: null
     docs: null
+    feat: MINOR
+    fix: PATCH
+    perf: PATCH
+    refactor: PATCH
     style: null
     test: null
+  bump_message: "bump: version $current_version \u2192 $new_version"
   change_type_map:
-    feature: Feat
     bug fix: Fix
-    fix: Fix
-    ci: CI
     build: Build
+    chore: Chore
+    ci: CI
     docs: Docs
+    feature: Feat
+    fix: Fix
     perf: Perf
     refactor: Refactor
     style: Style
     test: Test
-    chore: Chore
-  bump_message: "bump: version $current_version → $new_version"
-  tag_format: "$version"
-  version_scheme: "semver"
+  name: cz_conventional_commits
+  tag_format: $version
   update_changelog_on_bump: true
+  version: 0.1.0
+  version_files:
+  - .cz.yaml
+  - ./meta/main.yml
+  version_scheme: semver

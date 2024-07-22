@@ -1,7 +1,7 @@
 galaxy_info:
   author: ngohcieu642
   description: Patching security for Debian & Linux
-  min_ansible_container_version: : 0.0.1
+  min_ansible_container_version: : 0.1.0
 
   # Choose a valid license ID from https://spdx.org - some suggested licenses:
   # - BSD-3-Clause (default)
