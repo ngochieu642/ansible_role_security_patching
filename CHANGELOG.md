@@ -1,3 +1,10 @@
+## 0.1.2 (2024-07-22)
+
+### Fix
+
+- fix missing current version
+- fix wrong meta file
+
 ## 0.1.1 (2024-07-22)
 
 ### Fix
