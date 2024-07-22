@@ -4,10 +4,6 @@ on:
   release:
     types: [published]
 
-env:
-  ANSIBLE_GALAXY_NAME: security_patching
-  ANSIBLE_GALAXY_NAMESPACE: ngochieu642
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -34,7 +30,5 @@ jobs:
 
       - name: Import role to Ansible Galaxy
         run: |
-          ansible-galaxy role import \
-            --api-key ${{ secrets.ANSIBLE_GALAXY_API_KEY }} \
-            ${{ github.repository_owner }}/${GITHUB_REPOSITORY#*/} \
-            ${{ env.ANSIBLE_GALAXY_NAME }}
+          ansible-galaxy import ${{ github.repository_owner }} ${GITHUB_REPOSITORY#*/} \
+            --token ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
