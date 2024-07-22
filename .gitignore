@@ -21,3 +21,5 @@
 
 .vscode/
 .idea/
+
+.python-version
