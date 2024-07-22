@@ -1,7 +1,7 @@
 galaxy_info:
   author: ngohcieu642
   description: Patching security for Debian & Linux
-  min_ansible_container_version: : 0.1.0
+  min_ansible_container_version: : 0.1.1
 
   license: license (MIT)
 
