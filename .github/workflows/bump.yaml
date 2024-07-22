@@ -6,6 +6,10 @@ on:
       - main
     paths-ignore:
       - '.github/**'
+      - '.cz.yaml'
+      - 'CHANGELOG.md'
+      - 'README.md'
+      - '.gitignore'
 jobs:
   bump-version:
     if: ${{ ! startsWith(github.event.head_commit.message, 'bump:') }}
