@@ -1,0 +1,60 @@
+---
+- name: Update security packages
+  become: yes
+  yum:
+    name: '*'
+    security: yes
+    state: latest
+  register: yum_update_result
+  ignore_errors: yes
+
+- name: Set timestamp for backup
+  set_fact:
+    backup_timestamp: "{{ ansible_date_time.year }}-{{ ansible_date_time.month }}-{{ ansible_date_time.day }}_{{ ansible_date_time.hour }}-{{ ansible_date_time.minute }}-{{ ansible_date_time.second }}"
+  when: yum_update_result is failed
+
+- name: Backup RPM database
+  become: yes
+  command: cp -a /var/lib/rpm /var/lib/rpm.backup_{{ backup_timestamp }}
+  when: yum_update_result is failed
+
+- name: Delete current RPM database files
+  become: yes
+  file:
+    path: "/var/lib/rpm/__db*"
+    state: absent
+  when: yum_update_result is failed
+
+- name: Rebuild RPM database
+  become: yes
+  command: rpm --rebuilddb
+  when: yum_update_result is failed
+
+- name: Retry updating security packages
+  become: yes
+  yum:
+    name: '*'
+    security: yes
+    state: latest
+  when: yum_update_result is failed
+
+- name: Check if reboot is required
+  become: yes
+  command: needs-restarting -r
+  register: reboot_required
+  changed_when: false
+  failed_when: false
+
+- name: Set reboot required fact
+  set_fact:
+    reboot_is_required: "{{ reboot_required.rc == 1 }}"
+
+- name: Notify about reboot requirement
+  debug:
+    msg: "Reboot is required for {{ inventory_hostname }}"
+  when: reboot_is_required
+
+- name: Notify that no reboot is required
+  debug:
+    msg: "No reboot is required for {{ inventory_hostname }}"
+  when: not reboot_is_required

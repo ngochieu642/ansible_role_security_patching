@@ -1,0 +1,12 @@
+---
+- include_tasks: ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+
+- include_tasks: oracle_linux.yml
+  when: ansible_distribution == 'OracleLinux'
+
+- name: Log patching information
+  copy:
+    content: "{{ inventory_hostname }} patched at {{ patch_time }}\n"
+    dest: "{{ log_file_path }}"
+    mode: '0644'

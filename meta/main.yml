@@ -1,0 +1,30 @@
+galaxy_info:
+  author: ngohcieu642
+  description: Patching security for Debian & Linux
+
+  # Choose a valid license ID from https://spdx.org - some suggested licenses:
+  # - BSD-3-Clause (default)
+  # - MIT
+  # - GPL-2.0-or-later
+  # - GPL-3.0-only
+  # - Apache-2.0
+  # - CC-BY-4.0
+  license: license (MIT)
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        all
+    - name: OracleLinux
+      versions:
+        all
+
+  galaxy_tags:
+    - security
+    - patching
+    - ubuntu
+    - oraclelinux
+
+dependencies: []
