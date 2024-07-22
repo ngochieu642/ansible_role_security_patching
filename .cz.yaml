@@ -3,6 +3,7 @@ commitizen:
   version: 0.0.1
   "version_files":
       - ".cz.yaml"
+      - "./meta/main.yml"
   bump_map:
     break: MAJOR
     BREAKING CHANGE: MAJOR
