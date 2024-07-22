@@ -27,7 +27,7 @@ jobs:
         # This step will add an environment variable REVISION with the new version
         uses: commitizen-tools/commitizen-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT_TOKEN }}
 
       - name: echo new version
         run: |
