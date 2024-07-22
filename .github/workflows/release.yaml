@@ -2,7 +2,7 @@ name: Publish to Ansible Galaxy
 
 on:
   release:
-    types: [created]
+    types: [created, published]
 
 env:
   ANSIBLE_GALAXY_NAME: security_patching
