@@ -3,13 +3,6 @@ galaxy_info:
   description: Patching security for Debian & Linux
   min_ansible_container_version: : 0.1.0
 
-  # Choose a valid license ID from https://spdx.org - some suggested licenses:
-  # - BSD-3-Clause (default)
-  # - MIT
-  # - GPL-2.0-or-later
-  # - GPL-3.0-only
-  # - Apache-2.0
-  # - CC-BY-4.0
   license: license (MIT)
 
   min_ansible_version: 2.1
