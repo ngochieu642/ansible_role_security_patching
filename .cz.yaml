@@ -3,6 +3,31 @@ commitizen:
   version: 0.0.1
   "version_files":
       - ".cz.yaml"
+  bump_map:
+    break: MAJOR
+    BREAKING CHANGE: MAJOR
+    feat: MINOR
+    fix: PATCH
+    perf: PATCH
+    refactor: PATCH
+    build: null
+    chore: null
+    ci: null
+    docs: null
+    style: null
+    test: null
+  change_type_map:
+    feature: Feat
+    bug fix: Fix
+    fix: Fix
+    ci: CI
+    build: Build
+    docs: Docs
+    perf: Perf
+    refactor: Refactor
+    style: Style
+    test: Test
+    chore: Chore
   bump_message: "bump: version $current_version → $new_version"
   tag_format: "$version"
   version_scheme: "semver"
