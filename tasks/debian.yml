@@ -9,7 +9,7 @@
   shell: grep security /etc/apt/sources.list | tee /etc/apt/sources_security_only.list
   register: security_sources
 
-- name: Upgrade security packages
+- name: Upgrade security packages with the newly created file
   become: yes
   command: apt-get upgrade -y -o Dir::Etc::SourceList=/etc/apt/sources_security_only.list
   environment:
