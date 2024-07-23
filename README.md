@@ -4,6 +4,8 @@ Ansible Role: Security Patching
 An Ansible role that run security updates on Linux
 Currently support Ubuntu and Oracle Linux
 
+- Galaxy: https://galaxy.ansible.com/ui/standalone/roles/ngochieu642/security_patching/
+
 Requirements
 ------------
 
