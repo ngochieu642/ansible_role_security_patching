@@ -24,4 +24,5 @@ jobs:
 
       - name: Import role to Ansible Galaxy
         run: |
-          ansible-galaxy import ${{ github.repository_owner }} ${GITHUB_REPOSITORY#*/} --token ${{ secrets.ANSIBLE_GALAXY_TOKEN }}
+          REPO_NAME=${GITHUB_REPOSITORY#*/}
+          ansible-galaxy import ${{ github.repository_owner }} ${REPO_NAME} --token ${{ secrets.ANSIBLE_GALAXY_TOKEN }}
