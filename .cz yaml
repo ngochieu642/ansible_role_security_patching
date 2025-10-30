@@ -1,0 +1,38 @@
+---
+commitizen:
+  name: cz_customize
+  tag_format: $version
+  update_changelog_on_bump: true
+  version_scheme: semver
+  version: 0.1.3
+  version_files:
+  - .cz.yaml
+  - ./meta/main.yml
+  bump_message: "bump: version $current_version \u2192 $new_version"
+  customize:
+    bump_pattern: "^(BREAKING CHANGE|break|build|chore|ci|docs|feat|fix|perf|refactor|style|test)"
+    bump_map:
+      BREAKING CHANGE: MAJOR
+      break: MAJOR
+      build: PATCH
+      chore: PATCH
+      ci: null
+      docs: null
+      feat: MINOR
+      fix: PATCH
+      perf: PATCH
+      refactor: PATCH
+      style: PATCH
+      test: PATCH
+  change_type_map:
+    bug fix: Fix
+    build: Build
+    chore: Chore
+    ci: CI
+    docs: Docs
+    feature: Feat
+    fix: Fix
+    perf: Perf
+    refactor: Refactor
+    style: Style
+    test: Test
